@@ -1,7 +1,5 @@
 # **Introduction**
 
-**Questo Task consente il recupero dei problem relativi ad un determinato deploy recuperati da dynatrace**
-
 ![](almatoolbox.jpeg)
 
 ## **content**
