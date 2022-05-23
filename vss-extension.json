@@ -1,0 +1,82 @@
+{
+    "manifestVersion": 1,
+    "id": "AlmavivaEnfocerRule",
+    "name": "Maven Enforce per Azure DevOps Extension ",
+    "version": "0.0.41",
+
+    "publisher": "AlmaToolBoxCE",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],    
+	"public": false,
+    "description": "This task allow to use maven enforcer plugin into AzureDevops pipeline. \n Licenziante: Almaviva. \n Autore: Almaviva (progetto AlmaToolBox(r), the AlmavivA brand dedicated to DevOps)",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "screenshots": [
+        {
+            "path": "images/screenshots/property_exclusion.png"
+        },
+        {
+            "path": "images/screenshots/files_exclusion.png"
+        }
+    ],
+    "content": {
+        "details": {
+        "path": "readme.md"
+        },
+        "license": {
+            "path": "license.md"
+        }
+    },
+	"links": {
+        "home": {
+            "uri": "http://www.almaviva.it"
+        },
+        "license": {
+            "uri" : "https://creativecommons.org/licenses/by-nc-nd/2.5/it/"
+        }
+    },
+    "icons": {
+        "default": "images/icon.png"        
+    },
+    "tags": [
+        "build",
+        "rule",
+        "enforcer",
+		"association",
+		"automation"
+    ],
+    "files": [
+        {
+            "path": "property_exclusions"
+        },
+        {
+            "path": "files_filter"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "custom-build-task-property-exclusions",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "property_exclusions"
+            }
+        },
+        {
+            "id": "custom-build-task-files-filter",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "files_filter"
+            }
+        }
+    ]
+}

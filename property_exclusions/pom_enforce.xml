@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>enforce</groupId>
+	<artifactId>enforce</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+	<name>At_Italy</name>
+	<description>At_Italy</description>
+  <!--The identifier of the parent POM-->
+    <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M2</version>
+        <dependencies>
+          <dependency>
+			<groupId>it.almaviva.enforcer</groupId>
+			<artifactId>custom-almaviva-rule</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
+		<executions>
+          <execution>
+            <id>default-cli</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <myCustomRule implementation="it.almaviva.enforcer.rule.SonarRule">
+                  <fail>${fail}</fail>
+				  <pomRelativePath>pom.xml</pomRelativePath>
+                </myCustomRule>
+                <myCustomRule implementation="it.almaviva.enforcer.rule.FileExistRule">
+                  <fail>${fail}</fail>
+                  <regex>${regex}</regex>
+                </myCustomRule>
+			  </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
